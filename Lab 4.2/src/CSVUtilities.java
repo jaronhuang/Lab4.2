@@ -11,11 +11,15 @@ public class CSVUtilities
 	public CSVUtilities(File csv)
 	{
 		this.csv = csv;
+		this.numColumns = 12;
 	}
 	
 	public List<String> getColumnHeaders()
 	{
-		
+		for (int i = 0; i < numColumns; i++)
+		{
+			
+		}
 	}
 	
 	public List<String> getData(int column)
