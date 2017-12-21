@@ -34,7 +34,11 @@ public class CSVUtilities
 	public List<String> getColumnHeaders()
 	{
 		ArrayList<String> header = new ArrayList<String>();
-		String[] headers = CSVData.get(0).split(",");
+		String[] headers = new String[11];
+		for (int j = 0; j < headers.length; j++)
+		{
+			headers = CSVData.get(j).split(",");
+		}
 		for (int i = 0; i < headers.length; i++)
 		{
 			header.add(headers[i]);
@@ -45,10 +49,10 @@ public class CSVUtilities
 	public List<String> getDataString(int column)
 	{
 		ArrayList<String> data = new ArrayList<String>();
-		for (String i : CSVData)
+		for (int i = 0; i < CSVData.size(); i++)
 		{
-			String[] k = i.split(",");
-			data.add(k[column - 1]);
+			String[] newData = CSVData.get(i).split(",");
+			
 		}
 		return data;
 	}
