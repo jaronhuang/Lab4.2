@@ -15,10 +15,32 @@ public class Runner
 		
 		CSVUtilities csv = new CSVUtilities(crime);
 		
-		List<String> headers = csv.getColumnHeaders();
+		List<String> headers = csv.getDataString(1);
+		String[] city = new String[headers.size()];
+		int val = 0;
 		for (String header: headers) 
 		{
-			System.out.println(header);
+			city[val] = header;
+			val++;
+		}
+		System.out.println(city[0]);
+		
+		List<Integer> value = csv.getDataInteger(11);
+		int[] rate = new int[value.size()];
+		int aVal = 0;
+		for (int rates : value)
+		{
+			rate[aVal] = rates;
+			aVal++;
+		}
+		
+		int result = 0;
+		for (int i = 0; i < city.length; i++)
+		{
+			if (city[i].equals("BROOKLYN"))
+			{
+				result += rate[i];
+			}
 		}
 	}
 }

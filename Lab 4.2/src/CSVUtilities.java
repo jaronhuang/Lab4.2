@@ -48,7 +48,7 @@ public class CSVUtilities
 		for (int i = 1; i < CSVData.size(); i++)
 		{
 			String[] hold = CSVData.get(i).split(",");
-			data.add(hold[column]);	
+			data.add(hold[column]);
 		}
 		return data;
 	}
