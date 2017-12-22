@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Lab 4.2
+ * @author Jaron Huang
+ * 12/21/17
+ */
 public class CSVUtilities 
 {
 	private ArrayList<String> CSVData = new ArrayList<String>();
@@ -20,39 +25,30 @@ public class CSVUtilities
 			String line = br.readLine();
 			while (line != null)
 			{
-				String[] attributes = line.split(","); 
-				this.CSVData.addAll(Arrays.asList(attributes));
-				line = br.readLine();
+				this.CSVData.add(line);
+            	line = br.readLine();
 			}
 		}
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
 		}
+		
+		this.numColumns = getColumnHeaders().size();
 	}
 	
 	public List<String> getColumnHeaders()
 	{
-		ArrayList<String> header = new ArrayList<String>();
-		String[] headers = new String[11];
-		for (int j = 0; j < headers.length; j++)
-		{
-			headers = CSVData.get(j).split(",");
-		}
-		for (int i = 0; i < headers.length; i++)
-		{
-			header.add(headers[i]);
-		}
-		return header;
+		return Arrays.asList(CSVData.get(0).split(","));
 	}
 	
 	public List<String> getDataString(int column)
 	{
 		ArrayList<String> data = new ArrayList<String>();
-		for (int i = 0; i < CSVData.size(); i++)
+		for (int i = 1; i < CSVData.size(); i++)
 		{
-			String[] newData = CSVData.get(i).split(",");
-			
+			String[] hold = CSVData.get(i).split(",");
+			data.add(hold[column]);	
 		}
 		return data;
 	}
@@ -60,12 +56,10 @@ public class CSVUtilities
 	public List<Integer> getDataInteger(int column)
 	{
 		ArrayList<Integer> data = new ArrayList<Integer>();
-		int track = 0;
-		for (String i : CSVData)
+		for (int i = 1; i < CSVData.size(); i++)
 		{
-			String[] k = i.split(",");
-			data.add(Integer.parseInt(k[track]));
-			track++;
+			String[] hold = CSVData.get(i).split(",");
+			data.add(Integer.parseInt(hold[column]));
 		}
 		return data;
 	}
@@ -73,12 +67,10 @@ public class CSVUtilities
 	public List<Double> getDataDouble(int column)
 	{
 		ArrayList<Double> data = new ArrayList<Double>();
-		int track = 0;
-		for (String i : CSVData)
+		for (int i = 1; i < CSVData.size(); i++)
 		{
-			String[] k = i.split(",");
-			data.add(Double.parseDouble(k[track]));
-			track++;
+			String[] hold = CSVData.get(i).split(",");
+			data.add(Double.parseDouble(hold[column]));
 		}
 		return data;
 	}

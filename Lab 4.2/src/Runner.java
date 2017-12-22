@@ -2,6 +2,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Lab 4.2
+ * @author Jaron Huang
+ * 12/21/17
+ */
 public class Runner 
 {
 	public static void main(String[] args) throws IOException
@@ -10,10 +15,10 @@ public class Runner
 		
 		CSVUtilities csv = new CSVUtilities(crime);
 		
-		List<String> headers = csv.getDataString(1);
-		for (String data : headers)
+		List<String> headers = csv.getColumnHeaders();
+		for (String header: headers) 
 		{
-			System.out.println(data);
+			System.out.println(header);
 		}
 	}
 }
