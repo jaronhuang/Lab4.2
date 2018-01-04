@@ -33,14 +33,13 @@ public class Runner
 			rate[aVal] = rates;
 			aVal++;
 		}
-		
+
 		int result = 0;
-		for (int i = 0; i < city.length; i++)
+		for (int i = 1031; i < 1154; i++)
 		{
-			if (city[i].equals("BROOKLYN"))
-			{
-				result += rate[i];
-			}
+			result += rate[i];
 		}
+		
+		System.out.println(result);
 	}
 }

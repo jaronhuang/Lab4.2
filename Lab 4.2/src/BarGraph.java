@@ -24,11 +24,11 @@ public class BarGraph extends Application {
  
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Q3 of 2017");       
-        series1.getData().add(new XYChart.Data(Brooklyn, 25601.34));
-        series1.getData().add(new XYChart.Data(Bronx, 20148.82));
-        series1.getData().add(new XYChart.Data(Manhattan, 10000));
-        series1.getData().add(new XYChart.Data(Queens, 35407.15));
-        series1.getData().add(new XYChart.Data(StatenIsland, 12000));      
+        series1.getData().add(new XYChart.Data(Brooklyn, 102));
+        series1.getData().add(new XYChart.Data(Bronx, 352));
+        series1.getData().add(new XYChart.Data(Manhattan, 27));
+        series1.getData().add(new XYChart.Data(Queens, 24));
+        series1.getData().add(new XYChart.Data(StatenIsland, 6));      
         
         
         Scene scene  = new Scene(bc,800,600);
